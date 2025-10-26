@@ -1,10 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
-body.nav {
-    margin: 0px;
+nav {
+    margin: 0;
 }
 h1 {
     color: #333;
@@ -28,6 +29,7 @@ ul.nav {
     background-color: #333;
     position: fixed;
     top: 0;
+    z-index: 1000;
 }
 ul.nav li {
     float: left;
@@ -43,10 +45,36 @@ ul.nav li a{
     text-align: center;
 }
 ul.nav li a:hover {
-    background-color: #111;
+    background-color: #000;
     color: white;
 }
 ul.nav li a.active {
     background-color: #4CAF50;
     color: white;
+}
+.pilt {
+    position: relative; /*Peab olema static*/
+    height: auto;
+    width: 100%;
+    margin: 0;
+}
+.pilt img {
+    width: 100vw;
+    height: 110vh;
+    object-fit: cover;
+    display: block;
+}
+.keskel {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.keskel2 {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-52%, -50%);
 }

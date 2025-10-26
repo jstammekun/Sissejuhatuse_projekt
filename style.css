@@ -3,6 +3,9 @@ body {
     margin: 20px;
     background-color: #f4f4f4;
 }
+body.nav {
+    margin: 0px;
+}
 h1 {
     color: #333;
     text-align: center;
@@ -15,3 +18,35 @@ p {
     margin: 0 auto;
     text-align: justify;
 }   
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+}
+ul.nav li {
+    float: left;
+}
+ul.nav li:last-child {
+    float: right;
+}
+ul.nav li a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+ul.nav li a:hover {
+    background-color: #111;
+    color: white;
+}
+ul.nav li a.active {
+    background-color: #4CAF50;
+    color: white;
+}

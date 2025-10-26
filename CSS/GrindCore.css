@@ -4,11 +4,37 @@
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
+    color: white;
+    font-size:128px;
+    text-shadow: 4px 4px 8px #000000;
 }
 .keskel2 {
     position: absolute;
-    top: 52%;
+    top: 49%;
     left: 50%;
     text-align: center;
-    transform: translate(-52%, -50%);
+    transform: translate(-50%, -50%);
+    color:white;
+    font-size:36px;
+    text-shadow: 4px 4px 8px #000000;
+}
+.sissejuhatus {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+.aside_right {
+    max-width: 300px;
+    height: auto;
+    margin: 0;
+    padding: 10px;
+    float: right;
+}
+.aside_left {
+    max-width: 300px;
+    height: auto;
+    margin: 0;
+    padding: 10px;
+    float: left;
 }

@@ -3,6 +3,7 @@ body {
     margin:0;
     background-color: #f4f4f4;
     overflow-x: hidden;
+    padding-top: 40px; /* Et nav ei kataks ülejäänud asju*/
 }
 nav {
     margin: 0;
@@ -60,7 +61,7 @@ ul.nav li a.active {
 }
 .pilt img {
     width: 100vw;
-    height: 110vh;
+    height: auto;
     object-fit: cover;
     display: block;
 }

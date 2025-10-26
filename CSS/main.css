@@ -54,7 +54,7 @@ ul.nav li a.active {
     color: white;
 }
 .pilt {
-    position: relative; /*Peab olema static*/
+    position: relative; 
     height: auto;
     width: 100%;
     margin: 0;
@@ -64,4 +64,13 @@ ul.nav li a.active {
     height: auto;
     object-fit: cover;
     display: block;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

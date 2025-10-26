@@ -64,17 +64,3 @@ ul.nav li a.active {
     object-fit: cover;
     display: block;
 }
-.keskel {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-.keskel2 {
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-52%, -50%);
-}

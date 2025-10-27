@@ -1,13 +1,15 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-    background-color: #f4f4f4;
-    overflow-x: hidden;
-    padding-top: 40px; /* Et nav ei kataks ülejäänud asju*/
-}
-nav {
+/* Üldine sttil*/
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
+html, body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+/*Teksti ja pealkirjad*/
 h1 {
     color: #333;
     text-align: center;
@@ -19,31 +21,39 @@ p {
     max-width: 900px;
     margin: 0 auto;
     text-align: justify;
-}   
+}
+
+/*Pildid ja täiesti perses nav bar, mis lihtsalt ei tööta. Sooviks surra*/
+img {
+    max-width: 100%;
+    display: block;
+}
 ul.nav {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
     width: 100%;
     background-color: #333;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 ul.nav li {
-    float: left;
+    flex-shrink: 0;
 }
 ul.nav li:last-child {
-    float: right;
+    margin-left: auto;
 }
-ul.nav li a{
+ul.nav li a {
     display: block;
     color: white;
     padding: 14px 16px;
     text-decoration: none;
     text-align: center;
+    width: auto;
 }
 ul.nav li a:hover {
     background-color: #000;
@@ -53,17 +63,18 @@ ul.nav li a.active {
     background-color: #4CAF50;
     color: white;
 }
-.pilt {
-    position: relative; 
-    height: auto;
-    width: 100%;
-    margin: 0;
-}
-.pilt img {
-    width: 100vw;
-    height: auto;
-    object-fit: cover;
-    display: block;
+@media (max-width: 768px) {
+    ul.nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    ul.nav li {
+        width: 100%;
+    }
+    ul.nav li a {
+        width: 100%;
+        padding: 10px;
+    }
 }
 footer {
     background-color: #333;

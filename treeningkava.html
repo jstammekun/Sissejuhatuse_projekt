@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
     <link rel ="stylesheet" href="CSS/main.css">
     <link rel ="stylesheet" href="CSS/trenn.css">
+    <script src='js/script.js' defer></script>
 </head>
 <body>
     <nav>
@@ -37,9 +38,17 @@
             treeningueesmärke. Siin on mõned sammud, kuidas koostada tõhus treeningkava:</p>
         </div>
     </header>
+    <section class="menyy">
+        <label for="spordiala">Vali spordiala</label>
+        <select id="spordiala">
+            <option value="vorkpall_kava">vorkpalli kava</option>
+            <option value="jalgpall_kava">jalgpalli kava</option>
+            <option value="kikkpoks_kava">kikkpoksi kava</option>
+        </select>
+    </section>
     <main>
         <section class="kavad">
-            <div class="vorkpall_kava">
+            <div class="vorkpall_kava kava">
                 <h3>Võrkpall – 3 jõusaalipäeva</h3>
                 <ul>
                     <li><strong>Päev 1 – Alakeha & plahvatus:</strong>
@@ -73,7 +82,7 @@
                 </ul>
 
             </div>
-            <div class="jalgpall_kava">
+            <div class="jalgpall_kava kava">
                 <h3>Jalgpall – 3 jõusaalipäeva</h3>
                 <ul>
                     <li><strong>Päev 1 – Jõud (jalad):</strong>
@@ -107,7 +116,7 @@
                 </ul>
 
             </div>
-            <div class="kikkpoks_kava">
+            <div class="kikkpoks_kava kava">
                 <h3>Kikkpoks – 3 jõusaalipäeva</h3>
                 <ul>
                     <li><strong>Päev 1 – Täiskeha jõud:</strong>
@@ -141,7 +150,9 @@
 
             </div>
         </section>
-        <a href="GrindCore.html">Tagasi avalehele</a>
     </main>
+    <footer>
+        <p>© 2025 GrindCore. Kõik õigused kaitstud.</p>
+    </footer>
 </body>
 </html>

@@ -43,9 +43,6 @@
     margin: 10px;
 }
 @media (max-width: 768px) {
-    .pilt {
-        height: 50vh;
-    }
     .keskel {
         font-size: clamp(32px, 10vw, 64px);
     }
@@ -54,7 +51,7 @@
     }
     .pilt_tekst {
         padding: 10px;
-        transform: translateY(0%);
+        transform: translateY(-30%);
     }
 }
 
@@ -62,7 +59,10 @@
 
 .tekst {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
     width: 100%;
     background-color: lightcoral;
     border-radius: 8px;
@@ -79,7 +79,6 @@
 }
 .tekst aside {
     flex: 1;
-    flex-shrink: 1;
 }
 .tekst aside img {
     width: 100%;
@@ -89,10 +88,16 @@
 @media (max-width: 768px) {
     .tekst {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
-    .tekst, .tekst aside, .tekst_korval {
+    .tekst, .tekst_korval {
         flex: none;
         width: 100%;
-        padding: 20px;
+    }
+    .tekst aside {
+        width: 100%;
+        height: auto;
     }
 }

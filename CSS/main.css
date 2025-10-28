@@ -31,7 +31,7 @@ img {
 ul.nav {
     list-style-type: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     height: auto;
     width: 100%;
@@ -63,20 +63,13 @@ ul.nav li a.active {
     background-color: #4CAF50;
     color: white;
 }
-@media (max-width: 768px) {
-    ul.nav {
-        flex-direction: column;
-        width: 100%;
-    }
-    ul.nav li {
-        width: 100%;
-    }
-    ul.nav li a {
-        width: 100%;
-        padding: 10px;
-    }
-}
+/*@media (max-width: 768px) {
+
+}*/
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #333;
     color: white;
     text-align: center;

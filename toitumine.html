@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
     <link rel ="stylesheet" href="CSS/main.css">
     <link rel ="stylesheet" href="CSS/toit.css">
+    <script src ="kaloritearvutus.js"></script>
 </head>
 <nav>
         <ul class="nav">
@@ -28,17 +29,41 @@
             </li>
         </ul>
     </nav>
-<body>
-    <h1>Toitumine ja treening</h1>
+<header>
+    <img src="/Images/toitumine.jpeg" alt="toitumine"  class="header_image">
+    <div class="header_tekst">
+         <h1>Toitumine ja treening</h1>
     <p>Hea toitumine on treeningu oluline osa. Õige toitumine aitab parandada sooritust, kiirendada taastumist ja toetada üldist tervist. Siin on mõned põhilised toitumisnõuanded sportlastele:</p>
-    <ul>
+    
+    </div>
+   
+</header>
+<body>
+    <div>
+        <h2>Põhilised toitumisnõuanded sportlastele</h2>
+    </div>
+    <ol>
         <li>Söö mitmekesist toitu, mis sisaldab piisavalt valke, süsivesikuid ja rasvu.</li>
         <li>Joo piisavalt vett enne, ajal ja pärast treeningut, et vältida dehüdratsiooni.</li>
         <li>Tarbi süsivesikuid enne treeningut, et tagada piisav energia.</li>
         <li>Pärast treeningut söö valgurikast toitu, et aidata lihastel taastuda.</li>
         <li>Väldi töödeldud toite ja liigset suhkrut.</li>
+    </ol>
 
-    </ul>
-    <a href="GrindCore.html">Tagasi avalehele</a>
+    <div class="kalkulaator">
+        <h2>Päevase kalorivajaduse kalkulaator</h2>
+        <select name="sugu" id="gender">
+            <option value="Mees">Mees</option>
+            <option value="Naine">Naine</option>
+        </select>
+        <input type="text" id="weight" placeholder="Kaal (kg)">
+        <input type="text" id="height" placeholder="Pikkus (cm)">
+        <input type="text" id="age" placeholder="Vanus (aastates)">
+        <input type="text" id="activity" placeholder="Füüsiline aktiivsus (1-5)">
+        <button onclick="calculateCalories()">Arvuta kalorivajadus</button>
+        <p id="result">
+
+        </p>
+    </div>
 </body>
 </html>

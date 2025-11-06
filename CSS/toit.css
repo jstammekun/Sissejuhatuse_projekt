@@ -1,0 +1,90 @@
+body{
+    background-color: #f7f3e9;
+    text-align: center;
+}
+
+body ol li{
+    margin-bottom: 10px;
+    
+}
+
+main {
+    padding-top: 40px;
+}
+
+/*headeri kujundus*/
+header{
+    margin-top: 40px;
+    padding-top: 200px;
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.header_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(50%);
+}
+
+.header_tekst{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    margin-bottom: 200px;
+   
+}
+
+.header_tekst h1{
+    color: white;
+    font-size: 3rem;
+}
+
+.header_tekst p{
+    color: white;
+    margin-top: 30px;
+    font-size: 1.25rem;
+    font-style:italic 
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.kalkulaator {
+    width: 75%;
+    margin: 40px auto;
+    padding: 40px 30px;
+    color: #333;
+    margin-bottom: 20px;
+    /* make children stack */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers inputs with max-width */
+    gap: 12px; /* space between elements */
+    text-align: center;
+}
+
+.kalkulaator input,
+.kalkulaator select,
+.kalkulaator button,
+.kalkulaator textarea {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 12px;
+    box-sizing: border-box;
+    text-align: center;
+
+}

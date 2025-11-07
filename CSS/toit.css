@@ -62,9 +62,19 @@ body{
     text-align: center;
 }
 
+.kaalu_eesmark h2{
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .kalkulaator {
     width: 75%;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 40px 30px;
     color: #333;
     margin-bottom: 20px;
@@ -78,6 +88,7 @@ body{
 
 .kalkulaator input,
 .kalkulaator select,
+
 .kalkulaator button,
 .kalkulaator textarea {
     display: block;

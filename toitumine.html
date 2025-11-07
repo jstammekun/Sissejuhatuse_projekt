@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
     <link rel ="stylesheet" href="CSS/main.css">
     <link rel ="stylesheet" href="CSS/toit.css">
-    <script src ="kaloritearvutus.js"></script>
+    <script src ="/js/kaloritearvutus.js"></script>
 </head>
 <nav>
         <ul class="nav">
@@ -49,20 +49,32 @@
         <li>Pärast treeningut söö valgurikast toitu, et aidata lihastel taastuda.</li>
         <li>Väldi töödeldud toite ja liigset suhkrut.</li>
     </ol>
-
+    <div class="kaalu_eesmark">
+        <h2>Milline on teie eesmärk?</h2>
+        <input type="checkbox" id="lose_weight" name="lose_weight">
+        <label for="lose_weight">Soovin kaalust alla võtta</label><br><br>
+        <input type="checkbox" id="maintain_weight" name="maintain_weight">
+        <label for="maintain_weight">Soovin säilitada oma kaalu</label><br><br>
+        <input type="checkbox" id="gain_weight" name="gain_weight">
+        <label for="gain_weight">Soovin kaalus juurde võtta</label><br><br>
+        
+    </div>
+    
     <div class="kalkulaator">
         <h2>Päevase kalorivajaduse kalkulaator</h2>
+        
         <select name="sugu" id="gender">
             <option value="Mees">Mees</option>
             <option value="Naine">Naine</option>
         </select>
-        <input type="text" id="weight" placeholder="Kaal (kg)">
-        <input type="text" id="height" placeholder="Pikkus (cm)">
-        <input type="text" id="age" placeholder="Vanus (aastates)">
-        <input type="text" id="activity" placeholder="Füüsiline aktiivsus (1-5)">
+        <input type="text" id="weight" placeholder="Kaal (kg)" required>
+        <input type="text" id="height" placeholder="Pikkus (cm)" required>
+        <input type="text" id="age" placeholder="Vanus (aastates)" required>
+        <input type="text" id="activity" placeholder="Füüsiline aktiivsus (1-5)" required>
+    
         <button onclick="calculateCalories()">Arvuta kalorivajadus</button>
         <p id="result">
-
+            
         </p>
     </div>
 </body>

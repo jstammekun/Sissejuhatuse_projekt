@@ -11,7 +11,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
     <link rel ="stylesheet" href="CSS/main.css">
     <link rel ="stylesheet" href="CSS/toit.css">
+    <script src ="/js/kaloritearvutus.js"></script>
 </head>
+<body>
 <nav>
         <ul class="nav">
             <li>
@@ -27,18 +29,54 @@
                 <a href="https://github.com/jstammekun/Sissejuhatuse_projekt/wiki" target="_blank">About Us</a>
             </li>
         </ul>
-    </nav>
-<body>
-    <h1>Toitumine ja treening</h1>
+</nav>
+<header>
+    <img src="/Images/toitumine.jpeg" alt="toitumine"  class="header_image">
+    <div class="header_tekst">
+         <h1>Toitumine ja treening</h1>
     <p>Hea toitumine on treeningu oluline osa. Õige toitumine aitab parandada sooritust, kiirendada taastumist ja toetada üldist tervist. Siin on mõned põhilised toitumisnõuanded sportlastele:</p>
-    <ul>
+    
+    </div>
+   
+</header>
+
+    <div>
+        <h2>Põhilised toitumisnõuanded sportlastele</h2>
+    </div>
+    <ol>
         <li>Söö mitmekesist toitu, mis sisaldab piisavalt valke, süsivesikuid ja rasvu.</li>
         <li>Joo piisavalt vett enne, ajal ja pärast treeningut, et vältida dehüdratsiooni.</li>
         <li>Tarbi süsivesikuid enne treeningut, et tagada piisav energia.</li>
         <li>Pärast treeningut söö valgurikast toitu, et aidata lihastel taastuda.</li>
         <li>Väldi töödeldud toite ja liigset suhkrut.</li>
-
-    </ul>
-    <a href="GrindCore.html">Tagasi avalehele</a>
+    </ol>
+    <div class="kaalu_eesmark">
+        <h2>Milline on teie eesmärk?</h2>
+        <input type="checkbox" id="lose_weight" name="lose_weight">
+        <label for="lose_weight">Soovin kaalust alla võtta</label><br><br>
+        <input type="checkbox" id="maintain_weight" name="maintain_weight">
+        <label for="maintain_weight">Soovin säilitada oma kaalu</label><br><br>
+        <input type="checkbox" id="gain_weight" name="gain_weight">
+        <label for="gain_weight">Soovin kaalus juurde võtta</label><br><br>
+        
+    </div>
+    
+    <div class="kalkulaator">
+        <h2>Päevase kalorivajaduse kalkulaator</h2>
+        
+        <select name="sugu" id="gender">
+            <option value="Mees">Mees</option>
+            <option value="Naine">Naine</option>
+        </select>
+        <input type="text" id="weight" placeholder="Kaal (kg)" required>
+        <input type="text" id="height" placeholder="Pikkus (cm)" required>
+        <input type="text" id="age" placeholder="Vanus (aastates)" required>
+        <input type="text" id="activity" placeholder="Füüsiline aktiivsus (1-5)" required>
+    
+        <button onclick="calculateCalories()">Arvuta kalorivajadus</button>
+        <p id="result">
+            
+        </p>
+    </div>
 </body>
 </html>

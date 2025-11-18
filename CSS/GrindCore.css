@@ -19,7 +19,7 @@ body {
     width: 100%;
     height: 20%;
     z-index: 2;
-    background: linear-gradient(to bottom, transparent, whitesmoke);
+    background: linear-gradient(to bottom, transparent, #EDEADE);
     pointer-events: none;
 
 }
@@ -70,7 +70,7 @@ body {
     }
 }
 
-/*Section ja article - bread and butter. Natuke vähem enesetappu tekitav, aga siiski polnud kõige toredam*/
+/*Section ja article - bread and butter. Natuke vähem enesetappu tekitav, aga siiski polnud kõige toredam. Tavaline on mobiil versioon @media-ga tehtud desktop*/
 
 .tekst {
     display: flex;
@@ -79,6 +79,40 @@ body {
     width: 100%;
     height: auto;
     overflow: hidden;
+    padding-top: 5vh;
+}
+.tekst_korval {
+    flex: 55;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+}
+.tekst_korval h2 {
+    align-self: center;
+    font-size: 35px;
+    padding: 50px 15px 15px;
+}
+.tekst_korval h3 {
+    align-self: center;
+    color: gray;
+}
+.tekst_korval p {
+    padding: 15px;
+    text-align: justify;
+    font-size: 16px;
+}
+.tekst aside {
+    flex: 45;
+    align-content: center;
+    justify-items:center;
+}
+.tekst aside img {
+    width: 60%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 30px;
 }
 /*Desktop on min-width*/
 @media (min-width: 768px) {
@@ -90,35 +124,38 @@ body {
         flex-direction: row-reverse;
         height: 80vh;
     }
-}
-.tekst_korval {
-    flex: 50;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.tekst_korval h2 {
-    align-self: center;
-    padding: 50px 15px 15px;
-}
-.tekst_korval p {
-    padding: 30px;
-    text-align: center;
-    font-size: 18px;
-}
-.tekst aside {
-    flex: 50;
-    align-content: center;
-    justify-items:center;
-    border-style: dashed;
-}
-.tekst aside img {
+    .tekst_korval h2 {
+        align-self: center;
+        font-size: 50px;
+        padding: 50px 15px 15px;
+    }
+    .tekst_korval p {
+        padding: 30px 0px;
+        text-align: center;
+        font-size: 26px;
+    }
+    .tekst aside img {
     width: 80%;
     height: 90%;
     object-fit: cover;
     border-radius: 30px;
+    }
 }
+.toit {
+    display: flex;
+    width: 100%;
+    height: 140vh;
+    justify-content: center;
+    align-items: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.toit_konteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Tausta seaded*/
 .taust-gradient {
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -130,16 +167,16 @@ body {
 .t1 {
     background: linear-gradient(
     to bottom,
-    white 0%,
-    white 75%,
-    #ffec8e 100%
+    #EDEADE 0%,
+    #EDEADE 75%,
+    #fcba70 100%
     );
 }
 .t2 {
     background: linear-gradient(
     to bottom,
-    #ffec8e 0%,
-    #ffec8e 75%,
+    #fcba70 0%,
+    #fcba70 75%,
     #B2AC88 100%
     );
 }
@@ -148,14 +185,30 @@ body {
     to bottom,
     #B2AC88 0%,
     #B2AC88 75%,
-    blue 100%
+    #36454F 100%
+    );
+}
+.t4 {
+    background: linear-gradient(
+    to bottom,
+    #36454F 0%,
+    #36454F 75%,
+    #0a0913 100%
+    );
+}
+.t5 {
+    background: linear-gradient(
+    to bottom,
+    #0a0913 0%,
+    #0a0913 75%,
+    #0a0913 100%
     );
 }
 /*Animatsioonid lehel*/
 .lenda_paremalt {
     opacity: 0;
     transform: translateX(100%);
-    transition: all 1s ease-out;
+    transition: all 1.7s ease-out;
 }
 .lenda_paremalt.in-view {
     opacity: 1;
@@ -164,9 +217,18 @@ body {
 .lenda_vasakult {
     opacity: 0;
     transform: translateX(-100%);
-    transition: all 1s ease-out;
+    transition: all 1.7s ease-out;
 }
 .lenda_vasakult.in-view {
     opacity: 1;
     transform: translateX(0%);
+}
+.lenda_ülevalt_hero {
+    opacity: 0;
+    transform: translateY(-150%);
+    transition: all 2s ease;
+}
+.lenda_ülevalt_hero.in-view {
+    opacity: 1;
+    transform: translateY(-30%);
 }

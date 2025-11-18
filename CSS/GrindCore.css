@@ -75,20 +75,27 @@ body {
 .tekst {
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
+    flex-direction: column;
     width: 100%;
-    background-color: whitesmoke;
-    border-radius: 8px;
+    height: auto;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/*Desktop on min-width*/
+@media (min-width: 768px) {
+    .tekst {
+        flex-direction: row;
+        height: 80vh;
+    }
+    .tekst.reverse {
+        flex-direction: row-reverse;
+        height: 80vh;
+    }
 }
 .tekst_korval {
-    flex-shrink: 1;
+    flex: 50;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 .tekst_korval h2 {
@@ -101,38 +108,56 @@ body {
     font-size: 18px;
 }
 .tekst aside {
-    flex: 1;
+    flex: 50;
     align-content: center;
-    justify-items:center
+    justify-items:center;
+    border-style: dashed;
 }
 .tekst aside img {
-    width: 75%;
+    width: 80%;
     height: 90%;
     object-fit: cover;
     border-radius: 30px;
 }
-@media (max-width: 768px) {
-    .tekst {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .tekst, .tekst_korval {
-        flex: none;
-        width: 100%;
-    }
-    .tekst aside {
-        width: 100%;
-        height: auto;
-    }
+.taust-gradient {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 140vh;
 }
-.animatsioon_lenda_paremalt {
+.t1 {
+    background: linear-gradient(
+    to bottom,
+    white 0%,
+    white 75%,
+    #ffec8e 100%
+    );
+}
+.t2 {
+    background: linear-gradient(
+    to bottom,
+    #ffec8e 0%,
+    #ffec8e 75%,
+    #B2AC88 100%
+    );
+}
+.t3 {
+    background: linear-gradient(
+    to bottom,
+    #B2AC88 0%,
+    #B2AC88 75%,
+    blue 100%
+    );
+}
+/*Animatsioonid lehel*/
+.lenda_paremalt {
     opacity: 0;
     transform: translateX(100%);
     transition: all 1s ease-out;
 }
-.animatsioon_lenda_paremalt.in-view {
+.lenda_paremalt.in-view {
     opacity: 1;
     transform: translateX(0%);
 }

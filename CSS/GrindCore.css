@@ -136,3 +136,12 @@ body {
     opacity: 1;
     transform: translateX(0%);
 }
+.lenda_vasakult {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease-out;
+}
+.lenda_vasakult.in-view {
+    opacity: 1;
+    transform: translateX(0%);
+}

@@ -1,3 +1,6 @@
+:root {
+    --baas_aeg: 0.5s;
+}
 body {
     font-family: "Roboto", sans-serif;
 }
@@ -8,8 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 125vh;
-    min-height: 400px;
+    min-height: 125vh;
+    height: auto;
 }
 .pilt::after {
     content: "";
@@ -37,7 +40,7 @@ body {
     z-index: 1;
     text-align: center;
     text-shadow: 4px 4px 8px #000;
-    padding: 20px;
+    padding: clamp(0.5rem, 2vw, 2rem);
     max-width: 95%;
     word-wrap: break-word;
     transform: translateY(-30%);
@@ -51,21 +54,21 @@ body {
     align-items: center;
 }
 .keskel {
-    font-size: clamp(48px, 8vw, 128px);
+    font-size: clamp(2.5rem, 8vw, 7rem);
 }
 .keskel2 {
-    font-size: clamp(18px, 2vw, 36px);
+    font-size: clamp(1rem, 2vw, 3rem);
     margin: 10px;
 }
 @media (max-width: 768px) {
     .keskel {
-        font-size: clamp(32px, 10vw, 64px);
+        font-size: clamp(2rem, 10vw, 5rem);
     }
     .keskel2 {
-        font-size: clamp(14px, 4vw, 24px);
+        font-size: clamp(0.9rem, 4vw, 1.5rem);
     }
     .pilt_tekst {
-        padding: 10px;
+        padding: clamp(0.3rem, 2vw, 1rem);
         transform: translateY(-30%);
     }
 }
@@ -75,11 +78,14 @@ body {
 .tekst {
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
+    min-height: 80vh;
     height: auto;
-    overflow: hidden;
     padding-top: 5vh;
+}
+.tekst.reverse {
+    flex-direction: row-reverse;
 }
 .tekst_korval {
     flex: 55;
@@ -91,17 +97,19 @@ body {
 }
 .tekst_korval h2 {
     align-self: center;
-    font-size: 35px;
-    padding: 50px 15px 15px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    padding: clamp(1.5rem, 5vw, 3.5rem) clamp(0.5rem, 3vw, 1.5rem) clamp(0.5rem, 3vw, 1.5rem);
 }
 .tekst_korval h3 {
     align-self: center;
     color: gray;
+    font-size: clamp(1rem, 3vw, 1.2rem);
 }
 .tekst_korval p {
-    padding: 15px;
+    padding: clamp(1rem, 5vw, 2.5rem) clamp(0.1rem, 5vw, 2rem);
     text-align: justify;
-    font-size: 16px;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    hyphens: auto;
 }
 .tekst aside {
     flex: 45;
@@ -109,42 +117,65 @@ body {
     justify-items:center;
 }
 .tekst aside img {
-    width: 60%;
-    height: 70%;
-    object-fit: cover;
-    border-radius: 30px;
-}
-/*Desktop on min-width*/
-@media (min-width: 768px) {
-    .tekst {
-        flex-direction: row;
-        height: 80vh;
-    }
-    .tekst.reverse {
-        flex-direction: row-reverse;
-        height: 80vh;
-    }
-    .tekst_korval h2 {
-        align-self: center;
-        font-size: 50px;
-        padding: 50px 15px 15px;
-    }
-    .tekst_korval p {
-        padding: 30px 0px;
-        text-align: center;
-        font-size: 26px;
-    }
-    .tekst aside img {
     width: 80%;
     height: 90%;
     object-fit: cover;
     border-radius: 30px;
+}
+
+/*Sülearvuti*/
+@media (max-width: 1450px) and (min-width: 769px) {
+    .tekst_korval h2 {
+        align-self: center;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        padding: clamp(1.5rem, 5vw, 3.5rem) clamp(0.5rem, 3vw, 1.5rem) clamp(0.5rem, 3vw, 1.5rem);
+    }
+    .tekst_korval h3 {
+        align-self: center;
+        color: gray;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+    .tekst_korval p {
+        padding: clamp(1rem, 5vw, 2.5rem) clamp(0.1rem, 5vw, 2rem);
+        text-align: justify;
+        font-size: clamp(0.8rem, 5vw, 1.5rem);
+        hyphens: auto;
+    }
+    .tekst aside img {
+        width: 80%;
+        height: 70%;
+    }
+}
+/*Mobiil */
+@media (max-width: 768px) {
+    .tekst {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .tekst.reverse {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .tekst_korval h2 {
+        align-self: center;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        padding: clamp(1.5rem, 5vw, 3.5rem) clamp(0.5rem, 3vw, 1.5rem) clamp(0.5rem, 3vw, 1.5rem);
+    }
+    .tekst_korval p {
+        padding: clamp(0.5rem, 3vw, 1.5rem) clamp(0.5rem, 8vw, 1.5rem);
+        text-align: justify;
+        font-size: clamp(0.9rem, 5vw, 1.2rem);
+    }
+    .tekst aside img {
+    width: 60%;
+    height: 70%;
     }
 }
 .toit {
     display: flex;
     width: 100%;
-    height: 140vh;
+    min-height: 140vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     background-size: 100% 100%;
@@ -154,6 +185,172 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.toit_vorming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+}
+.toit_vorming h2 {
+    color: whitesmoke;
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    padding: clamp(1.5rem, 5vw, 4rem) clamp(0.8rem, 5vw, 1.5rem) clamp(0.8rem, 5vw, 1.5rem);
+}
+.toit_vorming h3 {
+    text-align: center;
+    color: gray;
+}
+.toit_vorming p {
+    padding: clamp(1rem, 5vw, 2.5rem) clamp(0.5rem, 5vw, 1.5rem);
+    text-align: center;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    color: whitesmoke;
+}
+.toit_pildid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    pointer-events: none;
+}
+.toit_pilt {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(50%, 50%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.toit_N {transform: translate(-50%, -360%);}
+.toit_NE {transform: translate(300%, -270%);}
+.toit_E {transform: translate(420%, -150%);}
+.toit_SE {transform: translate(330%, 220%);}
+.toit_S {transform: translate(-50%, 250%);}
+.toit_SW {transform: translate(-330%, 220%);}
+.toit_W {transform: translate(-490%, -150%);}
+.toit_NW {transform: translate(-380%, -290%);}
+
+
+.toit_N.in-view {transform: translate(-50%, -260%);}
+.toit_NE.in-view {transform: translate(200%, -170%);}
+.toit_E.in-view {transform: translate(320%, -50%);}
+.toit_SE.in-view {transform: translate(230%, 120%);}
+.toit_S.in-view {transform: translate(-50%, 150%);}
+.toit_SW.in-view {transform: translate(-280%, 130%);}
+.toit_W.in-view {transform: translate(-390%, -50%);}
+.toit_NW.in-view {transform: translate(-280%, -190%);}
+
+.toit_pilt.in-view:nth-child(1) {transition-delay: calc(var(--baas_aeg) *1); }
+.toit_pilt.in-view:nth-child(2) {transition-delay: calc(var(--baas_aeg) *2); }
+.toit_pilt.in-view:nth-child(3) {transition-delay: calc(var(--baas_aeg) *3); }
+.toit_pilt.in-view:nth-child(4) {transition-delay: calc(var(--baas_aeg) *4); }
+.toit_pilt.in-view:nth-child(5) {transition-delay: calc(var(--baas_aeg) *5); }
+.toit_pilt.in-view:nth-child(6) {transition-delay: calc(var(--baas_aeg) *6); }
+.toit_pilt.in-view:nth-child(7) {transition-delay: calc(var(--baas_aeg) *7); }
+.toit_pilt.in-view:nth-child(8) {transition-delay: calc(var(--baas_aeg) *8); }
+
+.toit_N.in-view, .toit_NE.in-view, .toit_E.in-view, .toit_SE.in-view,
+.toit_S.in-view, .toit_SW.in-view, .toit_W.in-view, .toit_NW.in-view {opacity: 1;}
+
+@media (max-width: 1450px) and (min-width: 769px) {
+    .toit {
+        min-height: 120vh;
+    }
+    .toit_pildid {
+        width: min(275px, 70vw);
+        height: min(275px, 70vw);
+    }
+    .toit_vorming h2 {
+        font-size: clamp(1rem, 4vw, 2rem);
+    }
+    .toit_vorming h3 {
+        text-align: center;
+        color: gray;
+    }
+    .toit_vorming p {
+        padding: clamp(0.8rem, 4vw, 2rem) clamp(0.5rem, 5vw, 1.5rem);
+        font-size: clamp(0.8rem, 5vw, 1.4rem);
+    }
+    .toit_E, .toit_W {
+        display: none !important;
+    }
+    .toit_N {transform: translate(-50%, -360%);}
+    .toit_NE {transform: translate(300%, -270%);}
+    .toit_SE {transform: translate(330%, 220%);}
+    .toit_S {transform: translate(-50%, 250%);}
+    .toit_SW {transform: translate(-330%, 220%);}
+    .toit_NW {transform: translate(-380%, -290%);}
+
+
+    .toit_N.in-view {transform: translate(-50%, -220%);}
+    .toit_NE.in-view {transform: translate(130%, -140%);}
+    .toit_SE.in-view {transform: translate(125%, 130%);}
+    .toit_S.in-view {transform: translate(-50%, 150%);}
+    .toit_SW.in-view {transform: translate(-230%, 130%);}
+    .toit_NW.in-view {transform: translate(-240%, -150%);}
+}
+@media (max-width: 768px) {
+    .toit {
+        min-height: 120vh;
+    }
+    .toit_pildid {
+        width: min(200px, 70vw);
+        height: min(200px, 70vw);
+    }
+    .toit_vorming p {
+    padding: clamp(1rem, 5vw, 2.5rem) clamp(0.5rem, 5vw, 1.5rem);
+    text-align: center;
+    font-size: clamp(0.7rem, 5vw, 1.2rem);
+    }
+    .toit_N, .toit_E, .toit_W, .toit_S {
+        display: none !important;
+    }
+    .toit_NE {transform: translate(150%, -200%);}
+    .toit_SE {transform: translate(120%, 200%);}
+    .toit_SW {transform: translate(-210%, 200%);}
+    .toit_NW {transform: translate(-250%, -200%);}
+
+
+    .toit_NE.in-view {transform: translate(145%, -210%) scale(0.8);}
+    .toit_SE.in-view {transform: translate(115%, 200%) scale(0.8);}
+    .toit_SW.in-view {transform: translate(-250%, 200%) scale(0.8);}
+    .toit_NW.in-view {transform: translate(-260%, -210%) scale(0.8);}
+}
+@media (max-width: 468px) {
+    .toit {
+        min-height: 120vh;
+    }
+    .toit_pildid {
+        width: min(150px, 70vw);
+        height: min(150px, 70vw);
+    }
+    .toit_N, .toit_E, .toit_W, .toit_S {
+        display: none !important;
+    }
+    .toit_vorming p {
+    padding: clamp(1rem, 5vw, 2.5rem) clamp(0.5rem, 5vw, 1.5rem);
+    text-align: center;
+    font-size: clamp(0.7rem, 5vw, 1.2rem);
+    }
+    .toit_NE {transform: translate(150%, -200%);}
+    .toit_SE {transform: translate(120%, 200%);}
+    .toit_SW {transform: translate(-210%, 200%);}
+    .toit_NW {transform: translate(-250%, -200%);}
+
+
+    .toit_NE.in-view {transform: translate(140%, -190%) scale(0.8);}
+    .toit_SE.in-view {transform: translate(130%, 200%) scale(0.8);}
+    .toit_SW.in-view {transform: translate(-210%, 200%) scale(0.8);}
+    .toit_NW.in-view {transform: translate(-250%, -190%) scale(0.8);}
 }
 /*Tausta seaded*/
 .taust-gradient {
@@ -162,7 +359,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 140vh;
+    min-height: 140vh;
+    height: auto;
 }
 .t1 {
     background: linear-gradient(
@@ -204,6 +402,9 @@ body {
     #0a0913 100%
     );
 }
+
+
+
 /*Animatsioonid lehel*/
 .lenda_paremalt {
     opacity: 0;

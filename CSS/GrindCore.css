@@ -71,7 +71,7 @@ body {
     }
 }
 
-/*Section ja article - bread and butter. Natuke vähem enesetappu tekitav, aga siiski polnud kõige toredam. Tavaline on mobiil versioon @media-ga tehtud desktop*/
+/*Div ja article - bread and butter. Natuke vähem enesetappu tekitav, aga siiski polnud kõige toredam. Tavaline on mobiil versioon @media-ga tehtud desktop*/
 
 .tekst {
     display: flex;
@@ -81,6 +81,7 @@ body {
     min-height: 80vh;
     height: auto;
     padding-top: 5vh;
+    margin-bottom: 40vh;
 }
 .tekst.reverse {
     flex-direction: row-reverse;
@@ -92,11 +93,12 @@ body {
     justify-content: center;
     align-items: center;
     word-wrap: break-word;
+    padding: 0 clamp(0.5rem, 5vw, 1rem) clamp(0.5rem, 5vw, 1.5rem);
 }
 .tekst_korval h2 {
     align-self: center;
     font-size: clamp(2.5rem, 5vw, 4rem);
-    padding: clamp(1.5rem, 5vw, 3.5rem) 0;
+    padding: 0 0 clamp(1rem, 5vw, 1.5rem);
 }
 .tekst_korval h3 {
     align-self: center;
@@ -104,15 +106,17 @@ body {
     font-size: clamp(1rem, 3vw, 1.2rem);
 }
 .tekst_korval p {
-    padding: clamp(1rem, 5vw, 2.5rem) clamp(0.1rem, 5vw, 2rem);
+    padding: clamp(1rem, 5vw, 2.5rem) 0;
     text-align: justify;
     font-size: clamp(1.2rem, 5vw, 1.8rem);
     hyphens: auto;
 }
 .tekst aside {
+    display: flex;
+    flex-direction: column;
     flex: 45;
-    align-content: center;
-    justify-items:center;
+    align-items: center;
+    justify-content:center;
 }
 .tekst aside img {
     width: 80%;
@@ -120,21 +124,38 @@ body {
     object-fit: cover;
     border-radius: 30px;
 }
+.tekst aside p {
+    font-size: clamp(0.4rem, 3vw, 1rem);
+    padding-top: clamp(0.5rem, 2vw, 1rem);
+    text-align: center;
+    color: gray;
+    max-width: 80%;
+}
+.tekst aside a {
+    text-decoration: none;
+    color: gray;
+}
+.tekst aside a:hover {
+    text-decoration: underline;
+}
 
 /*Sülearvuti*/
 @media (max-width: 1450px) and (min-width: 769px) {
+    .tekst_korval {
+        padding: 0 clamp(0.8rem, 4vw, 1.8rem) clamp(0.5rem, 5vw, 1.5rem);
+    }
     .tekst_korval h2 {
         align-self: center;
-        font-size: clamp(1.5rem, 5vw, 2rem);
-        padding: clamp(1.5rem, 5vw, 3.5rem) 0;
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        padding: clamp(1.5rem, 5vw, 3.5rem) 0 clamp(1rem, 5vw, 1.5rem);
     }
     .tekst_korval h3 {
         align-self: center;
         color: gray;
-        font-size: clamp(1rem, 3vw, 1.5rem);
+        font-size: clamp(0.8rem, 3vw, 1.3rem);
     }
     .tekst_korval p {
-        padding: clamp(1rem, 5vw, 2rem) 0;
+        padding: clamp(1rem, 5vw, 2rem) 0 0;
         text-align: justify;
         font-size: clamp(0.7rem, 5vw, 1.2rem);
         hyphens: auto;
@@ -154,13 +175,16 @@ body {
         flex-direction: column;
         min-height: auto;
     }
+    .tekst_korval {
+        padding: 0 clamp(0.5rem, 5vw, 1.5rem) clamp(0.5rem, 5vw, 1.5rem);
+    }
     .tekst_korval h2 {
         align-self: center;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
-        padding: clamp(1.5rem, 5vw, 3.5rem) clamp(0.5rem, 3vw, 1.5rem) clamp(0.5rem, 3vw, 1.5rem);
+        padding: clamp(1.5rem, 5vw, 3.5rem) 0 0;
     }
     .tekst_korval p {
-        padding: clamp(0.5rem, 3vw, 1.5rem) clamp(0.5rem, 8vw, 1.5rem);
+        padding: clamp(0.5rem, 3vw, 1.5rem) 0 0;
         text-align: justify;
         font-size: clamp(0.9rem, 5vw, 1.2rem);
     }
@@ -200,8 +224,6 @@ body {
     border-radius: 45%;
     padding: clamp(2rem, 5vw, 4rem);
     z-index: 5;
-    background-color: rgba(20, 20, 20, 0.4);
-    backdrop-filter: blur(5px);
 }
 .toit_vorming h2 {
     color: whitesmoke;
@@ -258,21 +280,24 @@ body {
 .toit_pilt:nth-child(6) {--indeks: 5;}
 .toit_pilt:nth-child(7) {--indeks: 6;}
 .toit_pilt:nth-child(8) {--indeks: 7;}
+
+/*Sülearvuti*/
 @media (max-width: 1450px) and (min-width: 769px) {
     .toit_konteiner {
         --raadius-start: 34vw;
         --raadius-lõpp: 26vw;
     }
     .toit_vorming h2 {
-        font-size: 0 clamp(0.2rem, 4vw, 0.5rem) clamp(1.2rem, 5vw, 2rem);
+        font-size: clamp(1.2rem, 5vw, 2rem);
     }
     .toit_vorming h3 {
-        font-size: clamp(1rem, 5vw, 1.5rem);
+        font-size: clamp(0.8rem, 3vw, 1.3rem);
     }
     .toit_vorming p {
         font-size: clamp(0.6rem, 4vw, 1rem);
     }
 }
+/*Mobiil*/
 @media (max-width: 768px) {
     .toit_konteiner {
         width: 80vw;
@@ -305,6 +330,27 @@ body {
     font-size: clamp(0.7rem, 3vw, 1rem);
     }
 }
+/*Eirit väiksed ekraanid*/
+@media (max-width: 568px) {
+    .toit_konteiner {
+        width: 80vw;
+        --raadius-start: 60vw;
+        --raadius-lõpp: 50vw;
+    }
+    .toit_konteiner .toit_pilt:nth-child(3),
+    .toit_konteiner .toit_pilt:nth-child(7) {
+        display: none;
+    }
+    .toit_pilt{
+        width: clamp(2rem, 10vw, 3.5rem);
+        height: clamp(2rem, 10vw, 3.5rem);
+    }
+    .toit_vorming {
+        width: 70%;
+        height: 70%;
+        padding: clamp(1rem, 5vw, 2rem);
+    }
+}
 /*Tausta seaded*/
 .taust-gradient {
     background-size: 100% 100%;
@@ -312,7 +358,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 140vh;
+    min-height: 100vh;
     height: auto;
 }
 .t1 {

@@ -93,7 +93,7 @@ body {
     justify-content: center;
     align-items: center;
     word-wrap: break-word;
-    padding: 0 clamp(0.5rem, 5vw, 1rem) clamp(0.5rem, 5vw, 1.5rem);
+    padding: 0 clamp(0.5rem, 5vw, 1.5rem) clamp(0.5rem, 5vw, 1.5rem);
 }
 .tekst_korval h2 {
     align-self: center;

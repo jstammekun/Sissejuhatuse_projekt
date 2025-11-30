@@ -2,12 +2,14 @@ function calculateCalories () {
     // Puhastame eelmised tulemused
     document.getElementById("result").innerText = "";
 
+    // Defineerin väärtused arvutuse tegemiseks
     let age = parseFloat(document.getElementById('age').value);
     let weight = parseFloat(document.getElementById('weight').value);
     let height = parseFloat(document.getElementById('height').value);
     let gender = document.getElementById('gender').value;
     let activityLevel = document.getElementById('activity').value;
 
+    // Kontrollin väärtuste õigsust
     if (isNaN(age) || isNaN(weight) || isNaN(height) || age <= 0 || weight <= 0 || height <= 0) {
         alert('Palun sisesta korrektsed väärtused, et arvutada täpne tulemus.');
         return;
@@ -16,6 +18,8 @@ function calculateCalories () {
         alert('Palun vali vähemalt üks eesmärk: kaalulangus, kaalu säilitamine või kaalutõus.');
         return;
     }
+
+    // Arvutan välja BMI
     let bmr;
     if (gender === 'Mees') {
         bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
@@ -31,7 +35,9 @@ function calculateCalories () {
         case '5': activityMultiplier = 1.9; break;
         default: activityMultiplier = 1.2;
     }
+    // Arvutab välja kalorite hulga
     let totalCalories = Math.round(bmr * activityMultiplier / 100) * 100;
+    
     
     if (document.getElementById('lose_weight').checked) {
         totalCalories = totalCalories - 500;

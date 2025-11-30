@@ -91,8 +91,10 @@ header{
 }
 
 .kava{
-    display: none; 
-    height: 500px;  
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
 }
 
 .vorkpall_kava{
@@ -101,6 +103,10 @@ header{
     border-radius: 40px;
     padding: 50px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;  
 }
 
 .jalgpall_kava{
@@ -109,6 +115,10 @@ header{
     border-radius: 40px;
     padding: 50px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px; 
 }
 
 .kikkpoks_kava{
@@ -117,4 +127,14 @@ header{
     border-radius: 40px;
     padding: 50px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px; 
+    
+}
+
+.kava_1, .kava_2, .kava_3 {
+    flex: 1;
+    min-width: 0;
 }

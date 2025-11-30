@@ -1,3 +1,5 @@
+// Kirjutasin koodi oma oskustega, kasutades mõningatel juhtudel abiks internetti. 
+
 function calculateCalories () {
     // Puhastame eelmised tulemused
     document.getElementById("result").innerText = "";

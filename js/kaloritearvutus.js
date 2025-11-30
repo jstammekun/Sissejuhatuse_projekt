@@ -1,4 +1,7 @@
 function calculateCalories () {
+    // Puhastame eelmised tulemused
+    document.getElementById("result").innerText = "";
+
     let age = parseFloat(document.getElementById('age').value);
     let weight = parseFloat(document.getElementById('weight').value);
     let height = parseFloat(document.getElementById('height').value);
@@ -32,7 +35,7 @@ function calculateCalories () {
     
     if (document.getElementById('lose_weight').checked) {
         totalCalories = totalCalories - 500;
-        document.getElementById('result').innerText += ` Kui soovite kaalust alla võtta, peaksite tarbima umbes ${totalCaloriesCalories} kalorit päevas.`;
+        document.getElementById('result').innerText += ` Kui soovite kaalust alla võtta, peaksite tarbima umbes ${totalCalories} kalorit päevas.`;
     }
     if (document.getElementById('maintain_weight').checked) {
         document.getElementById('result').innerText += ` Kui soovite säilitada oma kaalu, peaksite tarbima umbes ${totalCalories} kalorit päevas.`;
@@ -44,10 +47,10 @@ function calculateCalories () {
 
     let resultText = '';
 
-    // Esmalt loome põhilause
+    // Esmalt loob põhilause
     resultText = `Sinu soovituslik päevane kalorite hulk on umbes <strong>${totalCalories} kcal</strong>.`;
     
-    // Tingimuslausete plokk äärmuslike väärtuste ja toidusoovituste jaoks.
+    // Tingimuslausetega anname igale inimesele vastava soovituse
     if (totalCalories < 1200) {
         resultText = `Sinu arvutatud kalorivajadus (${totalCalories} kcal) on potentsiaalselt ohtlikult madal. Nii madal kaloraaž ei pruugi tagada kehale vajalikke toitaineid. Palun konsulteeri toitumisnõustaja või arstiga.`;
     } else if (totalCalories > 4000) {
@@ -95,5 +98,6 @@ function calculateCalories () {
         <strong>Näidiseine:</strong> Kaloririkas smuuti, mis sisaldab valgupulbrit, kaerahelbeid, banaani, supilusikatäie maapähklivõid ja täispiima - lisaks tavalistele suurtele toidukordadele.`;
     }
 
+    // Kuvame koostatud teksti tulemuse alale
     document.getElementById('result').innerHTML = resultText;
 }
